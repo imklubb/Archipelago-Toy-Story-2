@@ -144,4 +144,7 @@ you are not in a playable level are queued and applied once you are back in a le
   `connector_bizhawk_generic.lua` *before* `ts2.lua`, and that the Toy Story 2
   Client is pointed at the correct game.
 - **Wrong game/version:** This randomizer targets the NTSC-U release
-  (`SCUS-94464`). Other regions are not supported.
+  (`SLUS-00893`). Other regions are not supported.
+- **ts2.lua is in active:** This is ok, the game should still send and recieve check.
+  if, not, reach out in the Discord.
+  
