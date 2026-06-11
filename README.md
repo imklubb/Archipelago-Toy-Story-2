@@ -8,7 +8,7 @@ to the Rescue randomizer for Archipelago.
 - [Archipelago](https://github.com/ArchipelagoMW/Archipelago/releases). Please use
   version 0.6.7 or later for integrated BizHawk support.
 - A legally obtained copy of **Toy Story 2: Buzz Lightyear to the Rescue** (PS1,
-  NTSC-U, serial `SCUS-94464`) as an ISO or BIN/CUE image. Other regions are **not**
+  NTSC-U, serial `SLUS-00893`) as an ISO or BIN/CUE image. Other regions are **not**
   supported.
 - [BizHawk](https://tasvideos.org/BizHawk/ReleaseHistory) 2.10 or later (the latest
   release is recommended). Other emulators are **not** supported.
