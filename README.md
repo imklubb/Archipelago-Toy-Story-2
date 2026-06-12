@@ -118,6 +118,45 @@ To re-sync safely:
 It is perfectly safe to make progress offline; everything will re-sync the next time
 you connect — just do that connection from the map or title screen.
 
+## Tracking Your Progress (optional)
+
+You have two ways to track which checks you've found and which are currently in
+logic. You can use either, or both.
+
+### PopTracker pack (separate window, with auto-tracking)
+
+Install [PopTracker](https://github.com/black-sliver/PopTracker/releases) and load
+the Toy Story 2 pack. It can connect directly to your Archipelago slot to
+auto-track items and checks as you play, and shows per-level maps. See the pack's
+own readme for connection details.
+
+### Universal Tracker (an embedded tab in the Toy Story 2 Client)
+
+With Universal Tracker installed, the Toy Story 2 Client gains a **Tracker Page**
+tab that lists exactly which locations are currently reachable, computed from this
+game's own logic and updating live as you collect items — all inside the same
+window you already use to connect BizHawk.
+
+1. Download the latest `tracker.apworld` from the
+   [Universal Tracker releases](https://github.com/FarisTheAncient/Archipelago/releases).
+   Use the release that matches your Archipelago version, or it won't load.
+2. Install it the same way you installed the Toy Story 2 apworld (double-click it,
+   or drop it in your Archipelago `custom_worlds` folder).
+3. Keep the `.yaml` you generated with in your Archipelago `Players` folder — the
+   tracker reads it to build the logic.
+4. Launch the **Toy Story 2 Client** as usual. When Universal Tracker is present,
+   a **Tracker Page** tab appears automatically; connect and play, and it updates
+   as you go. If Universal Tracker isn't installed, the client behaves exactly as
+   before (no tab).
+
+This world ships full Universal Tracker support, so the exact seed's options
+(including your skips difficulty, game mode, and starting levels) are restored
+automatically and the tracker matches your actual game.
+
+If you'd rather have the tracker in a separate window, you can still launch
+**Universal Tracker** directly from the Archipelago Launcher and connect to your
+slot; both approaches use the same logic.
+
 ## Death Link (optional)
 
 If you enable Death Link in your YAML, dying in your game sends a death to everyone
@@ -145,6 +184,3 @@ you are not in a playable level are queued and applied once you are back in a le
   Client is pointed at the correct game.
 - **Wrong game/version:** This randomizer targets the NTSC-U release
   (`SLUS-00893`). Other regions are not supported.
-- **ts2.lua is in active:** This is ok, the game should still send and recieve check.
-  if, not, reach out in the Discord.
-  
