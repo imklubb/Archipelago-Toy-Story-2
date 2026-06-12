@@ -14,9 +14,12 @@ to the Rescue randomizer for Archipelago.
   release is recommended). Other emulators are **not** supported.
 - The latest `toystory2.apworld`. Put this in your `Archipelago/custom_worlds`
   folder.
-- The `ts2.lua` all-in-one game script (distributed alongside the apworld). This
-  single script does everything — you do **not** need to load any separate
-  Archipelago BizHawk connector.
+- The `ts2.lua` all-in-one game script (distributed alongside the apworld). **Place
+  it in your `Archipelago/data/lua/` folder** — the same folder Archipelago keeps its
+  BizHawk connector and networking library in. This single script does everything, so
+  you do **not** need to load any separate Archipelago BizHawk connector, but it does
+  need to live in `data/lua/` so it can find Archipelago's `socket` library (a native
+  component that can't be embedded in the script).
 
 ## Configuring BizHawk
 
@@ -60,8 +63,12 @@ settings:
    Be careful to avoid clicking "TAStudio" below it in the menu, as this is known to
    delete your savefile.
 4. In the Lua Console window, go to `Script > Open Script…`.
-5. Open **`ts2.lua`** (the all-in-one Toy Story 2 script). That's the only script
-   you need — it includes the BizHawk connector, so there's nothing else to load.
+5. Open **`ts2.lua`** from your `Archipelago/data/lua/` folder. That's the only
+   script you need — it includes the BizHawk connector, so there's nothing else to
+   load. **It must be opened from `data/lua/`**; loading it from another location
+   (e.g. your Downloads folder) will fail with a
+   `socket.lua: The specified module could not be found` error, because the script
+   won't be able to locate Archipelago's networking library.
 6. The emulator and client will eventually connect to each other. The Toy Story 2
    Client window should indicate that it connected and recognized Toy Story 2.
 7. To connect the client to the server, enter your room's address and port (e.g.
@@ -179,5 +186,10 @@ you are not in a playable level are queued and applied once you are back in a le
   title screen and reconnect from there; the state will re-sync correctly.
 - **Client says connected but nothing happens:** Make sure `ts2.lua` is loaded and
   that the Toy Story 2 Client is pointed at the correct game.
+- **`socket.lua: The specified module could not be found` (or similar socket error):**
+  `ts2.lua` was loaded from the wrong place. Move it into your `Archipelago/data/lua/`
+  folder and open it from there. That folder holds Archipelago's `socket` networking
+  library (a native file the script can't carry inside itself), and the script must be
+  loaded from beside it.
 - **Wrong game/version:** This randomizer targets the NTSC-U release
   (`SLUS-00893`). Other regions are not supported.
