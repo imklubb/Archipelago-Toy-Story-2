@@ -14,7 +14,9 @@ to the Rescue randomizer for Archipelago.
   release is recommended). Other emulators are **not** supported.
 - The latest `toystory2.apworld`. Put this in your `Archipelago/custom_worlds`
   folder.
-- The `ts2.lua` game script (distributed alongside the apworld).
+- The `ts2.lua` all-in-one game script (distributed alongside the apworld). This
+  single script does everything — you do **not** need to load any separate
+  Archipelago BizHawk connector.
 
 ## Configuring BizHawk
 
@@ -58,22 +60,20 @@ settings:
    Be careful to avoid clicking "TAStudio" below it in the menu, as this is known to
    delete your savefile.
 4. In the Lua Console window, go to `Script > Open Script…`.
-5. Navigate to your Archipelago install folder and open
-   `data/lua/connector_bizhawk_generic.lua` **first**.
-6. Then open **`ts2.lua`** (the Toy Story 2 game script) **second**. Order matters:
-   always load the connector before `ts2.lua`.
-7. The emulator and client will eventually connect to each other. The Toy Story 2
+5. Open **`ts2.lua`** (the all-in-one Toy Story 2 script). That's the only script
+   you need — it includes the BizHawk connector, so there's nothing else to load.
+6. The emulator and client will eventually connect to each other. The Toy Story 2
    Client window should indicate that it connected and recognized Toy Story 2.
-8. To connect the client to the server, enter your room's address and port (e.g.
+7. To connect the client to the server, enter your room's address and port (e.g.
    `archipelago.gg:38281`) into the top text field of the client and click Connect.
 
 You should now be able to receive and send items. You'll need to do these steps
 every time you want to reconnect.
 
-## IMPORTANT: Load the Scripts on the Title Screen (After Pressing Start)
+## IMPORTANT: Load the Script on the Title Screen (After Pressing Start)
 
-> **Load the Lua scripts (`connector_bizhawk_generic.lua` and `ts2.lua`) while the
-> game is on the TITLE SCREEN AFTER PRESSING START.**
+> **Load the `ts2.lua` script while the game is on the TITLE SCREEN AFTER PRESSING
+> START.**
 
 There are technically two title screens. The first is the initial splash; pressing
 Start there takes you to the **second title screen** (the main menu). Pressing Start
@@ -90,8 +90,7 @@ To avoid this:
 
 1. Boot the game and press Start to reach the **title screen after pressing Start**
    (the main menu). Do not start a save yet.
-2. **Only then** load `connector_bizhawk_generic.lua` and `ts2.lua` in the Lua
-   Console.
+2. **Only then** load `ts2.lua` in the Lua Console.
 3. Connect the Toy Story 2 Client to the server.
 4. Start your save / enter the game normally.
 
@@ -110,8 +109,7 @@ To re-sync safely:
 
 1. Return to the **level-select map** (or the **title screen**) before reconnecting,
    reloading the Lua, or restarting BizHawk.
-2. Reconnect the client (or reload `connector_bizhawk_generic.lua` then `ts2.lua`,
-   in that order).
+2. Reconnect the client (or reload `ts2.lua`).
 3. Wait for the client to report that it has connected and re-synced.
 4. Then enter a level as normal.
 
@@ -175,12 +173,11 @@ you are not in a playable level are queued and applied once you are back in a le
 
 - **No starting items / nothing unlocked:** You most likely loaded the Lua off the
   title screen. Return to the title screen after pressing Start (the main menu),
-  reload `connector_bizhawk_generic.lua` then `ts2.lua`, and reconnect.
+  reload `ts2.lua`, and reconnect.
 - **Coin counts, checks, or unlocks look wrong after reconnecting:** You may have
   reconnected or reloaded the scripts while inside a level. Return to the map or
   title screen and reconnect from there; the state will re-sync correctly.
-- **Client says connected but nothing happens:** Make sure you loaded
-  `connector_bizhawk_generic.lua` *before* `ts2.lua`, and that the Toy Story 2
-  Client is pointed at the correct game.
+- **Client says connected but nothing happens:** Make sure `ts2.lua` is loaded and
+  that the Toy Story 2 Client is pointed at the correct game.
 - **Wrong game/version:** This randomizer targets the NTSC-U release
   (`SLUS-00893`). Other regions are not supported.
