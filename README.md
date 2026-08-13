@@ -1,3 +1,6 @@
+### Please note, this was created with the assistance of AI. For more details, click the message below
+- https://discord.com/channels/731205301247803413/1343725532004749322/1537272415548088391
+
 # Toy Story 2 - Setup Guide
 
 This guide walks you through installing and playing the Toy Story 2: Buzz Lightyear
