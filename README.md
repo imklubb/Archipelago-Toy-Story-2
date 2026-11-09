@@ -1,3 +1,6 @@
+## 👉 Download Latest Release by clicking the "Releases" Side Bar! 👉
+
+
 ### Please note, this was created with the assistance of AI. For more details, click the message below
 - https://discord.com/channels/731205301247803413/1343725532004749322/1537272415548088391
 
